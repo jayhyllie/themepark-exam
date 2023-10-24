@@ -1,0 +1,36 @@
+main#splash {
+    place-content: center;
+}
+main#splash h1 {
+    scale: 3;
+    letter-spacing: 5px;
+}
+
+.splash__wrapper {
+    width: 100%;
+}
+.splash__logo {
+    max-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.splash__logo img {
+    width: 300px;
+    animation: reveal 3s linear 0s;
+    max-height: 0;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+@keyframes reveal {
+    0% {
+        max-height: 0;
+    }
+    25%,
+    75% {
+        max-height: 300px;
+    }
+    100% {
+        max-height: 0;
+    }
+}

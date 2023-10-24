@@ -1,0 +1,64 @@
+.hero {
+  max-height: 600px;
+}
+.carousel {
+  position: relative;
+  height: 600px;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel_swiper {
+  display: flex;
+  justify-content: space-between;
+}
+.carousel__swiper--left,
+.carousel__swiper--right {
+  background-color: transparent !important;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 10px;
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.carousel__swiper--left {
+  left: 0;
+}
+.carousel__swiper--right {
+  right: 0;
+}
+.carousel__swiper--left svg {
+    margin-left: 8px;
+}
+.carousel__indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%, -50%);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.carousel__indicator--dot {
+  cursor: pointer;
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.carousel .active {
+  background-color: var(--clr-accent);
+}
