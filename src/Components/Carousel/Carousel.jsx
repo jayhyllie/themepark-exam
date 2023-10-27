@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { slidersVariants, slideVariants, dotsVariants } from "../../utils/transitions";
+import { slidersVariants, slideVariants } from "../../utils/transitions";
+import Button from "../Buttons/Button";
 
 function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,10 +18,6 @@ function Carousel({ images }) {
     setCurrentIndex((prevIndex) =>
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
     );
-  };
-  const handleDotClick = (index) => {
-    setDirection(index > currentIndex ? "right" : "left");
-    setCurrentIndex(index);
   };
   return (
     <div className="carousel">
@@ -66,19 +63,7 @@ function Carousel({ images }) {
             </svg>
           </motion.div>
         </div>
-      <div className="carousel__indicator">
-        {images.map((_, index) => (
-          <motion.div
-            key={index}
-            className={`carousel__indicator--dot ${currentIndex === index ? "active" : ""}`}
-            onClick={() => handleDotClick(index)}
-            initial="initial"
-            animate={currentIndex === index ? "animate" : ""}
-            whileHover="hover"
-            variants={dotsVariants}
-          ></motion.div>
-        ))}
-      </div>
+      <Button title="Buy tickets" className="secondary"/>
     </div>
   );
 }

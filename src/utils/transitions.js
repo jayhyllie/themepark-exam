@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 export const slideVariants = {
   hiddenRight: {
     x: "100%",
@@ -54,3 +56,68 @@ export const buttonVariants = {
     ease: "easeInOut"
   }
 }
+
+export const cardContent = {
+  initial: { height: "0", opacity: 0 },
+  animate: { height: "70px", opacity: 1 },
+  transition: { ease: "easeIn" },
+};
+
+export const useDimensions = ref => {
+  const dimensions = useRef({ width: 0, height: 0 });
+
+  useEffect(() => {
+      dimensions.current.width = ref.current.offsetWidth;
+      dimensions.current.height = ref.current.offsetHeight;
+  }, [ref]);
+
+  return dimensions.current;
+}
+
+export const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2
+    }
+  }),
+  closed: {
+    clipPath: "circle(30px at 40px 40px)",
+    transition: {
+      delay: 0.4,
+      type: "spring",
+      stiffness: 400,
+      damping: 40
+    }
+  }
+};
+
+export const ListVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+
+export const ListItemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    pointerEvents: "unset",
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    pointerEvents: "none",
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};

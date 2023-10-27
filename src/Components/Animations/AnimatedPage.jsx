@@ -15,6 +15,7 @@ const AnimatedPage = ({ children }) => {
       animate="animate"
       exit="exit"
       transition="transition"
+      style={{ maxWidth: "100vw" }}
     >
       {children}
     </motion.div>

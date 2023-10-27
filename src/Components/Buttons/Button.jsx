@@ -1,14 +1,17 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { buttonVariants } from "../../utils/transitions";
+import { motion } from "framer-motion";
 import "./Button.css";
 
 function Button({ title, className }) {
   return (
-    <AnimatePresence>
-      <motion.button variants={buttonVariants} className={`btn ${className}`}>
-        <span>&#9758;</span> {title}
-      </motion.button>
-    </AnimatePresence>
+    <motion.button
+      whileHover={{ scale: 1.3 }}
+      whileTap={{ scale: 0.8 }}
+      transition={{ ease: "easeInOut" }}
+      className={`btn ${className}`}
+    >
+      {className === "secondary" ? <span>&#9758;</span> : <span>&#8826;</span>}{" "}
+      {title}
+    </motion.button>
   );
 }
 

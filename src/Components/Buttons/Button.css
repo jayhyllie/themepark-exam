@@ -1,19 +1,29 @@
 .btn {
     border:none;
     border-radius: 1em;
-    padding: 1em 3em;
+    padding: 1em 2em;
     color: var(--clr-secondary);
-    font-size: 1.2em;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: .5em;
+    z-index: 100;
 }
 .btn span {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 .primary {
     background-color: var(--btn-primary);
 }
 .secondary {
     background-color: var(--btn-accent);
+}
+
+.carousel button {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    max-width: fit-content;
+    margin-inline: auto;
 }

@@ -1,0 +1,12 @@
+.nav__toggle {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 13px;
+    left: 11px;
+    width: 60px;
+    aspect-ratio: 1;
+    background: transparent;
+    z-index: 999;
+}

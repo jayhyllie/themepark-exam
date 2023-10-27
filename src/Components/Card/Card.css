@@ -1,0 +1,97 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: fit-content;
+  z-index: 10;
+}
+.card > a {
+  font-size: 2rem;
+  font-family: var(--ff-accent);
+}
+.card__inner {
+  height: 22em;
+  aspect-ratio: 1.7 / 1;
+  max-width: 100%;
+  display: grid;
+  z-index: 1;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 15px 0 rgba(39, 39, 39, 0.9);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+  overflow: hidden;
+}
+.card__inner--imageWrapper {
+  height: calc(350px / 1.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.card__inner--imageWrapper:hover .card__inner--imageWrapper-img {
+  transform: scale(1.1);
+}
+.card__inner--imageWrapper-img {
+  height: 350px;
+  background-size: cover;
+  background-position: center center;
+  transition: transform 400ms ease-in;
+  z-index: 1;
+}
+.card__inner--content {
+  min-height: 60px;
+  background: var(--clr-secondary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 20px 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  z-index: 15;
+}
+.card__inner--content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% - 4px);
+  width: 100%;
+  padding-bottom: 14%;
+  background: var(--clr-secondary);
+  clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 0 100%, 0 100%);
+}
+.card__inner--content-header {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 15px;
+  width: calc(100% - 100px);
+  margin-top: -10px;
+}
+.card__inner--content-header__title,
+.card__inner--content-header__subTitle {
+  position: relative;
+  line-height: 1.25;
+  margin-bottom: 5px;
+}
+.card__inner--content-body {
+  position: relative;
+  padding-top: 0.833333rem;
+}
+.card__inner--content-body__link,
+.card__title {
+  color: var(--btn-primary);
+  margin-top: -10px;
+}
+.card__inner--content-body__link {
+  letter-spacing: 1px;
+}
+.card__inner--content-footer {
+  display: grid;
+  place-content: center;
+}
