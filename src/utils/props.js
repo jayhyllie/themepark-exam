@@ -35,9 +35,8 @@ export const cards = [
 
 export const pages = [
   { title: "Home", path: "/", id: 1 },
-  { title: "Tickets", path: "/tickets", id: 2 },
-  { title: "Media", path: "/media", id: 3 },
-  { title: "Contact", path: "/contact", id: 4 },
+  { title: "Media", path: "/media", id: 2 },
+  { title: "Contact", path: "/contact", id: 3 },
 ];
 
 export const contactInfo = {
