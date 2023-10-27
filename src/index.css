@@ -161,7 +161,7 @@ select {
 main {
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  min-height: fit-content;
   background-image: url("/images/backgroundPastel.jpg");
   background-size: cover;
   background-color: rgba(0, 0, 0, .8);
