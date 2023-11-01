@@ -13,7 +13,7 @@ function App() {
       const timer = setTimeout(() => {
         setShowSplash(false);
         localStorage.setItem('splashShown', 'true');
-      }, 2000);
+      }, 6000);
   
       return () => clearTimeout(timer);
     }

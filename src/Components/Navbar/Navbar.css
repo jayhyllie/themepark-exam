@@ -8,10 +8,12 @@ nav,
   right: 0;
   bottom: 0;
   width: 100%;
-  place-content: flex-start;
-  align-content: center;
+  display: flex;
+  place-content: center;
+  align-items: center;
   padding-inline: 4em;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 .background {
   background: var(--bg-primary);
@@ -35,7 +37,8 @@ nav,
   color: var(--clr-secondary);
   z-index: 1;
 }
-body:not(:has(nav.active)) main {
+body:not(:has(nav.active)) main,
+body:not(:has(nav.active)) footer {
   position: relative;
   z-index: 1000;
 }

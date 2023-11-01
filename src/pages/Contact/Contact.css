@@ -1,0 +1,73 @@
+.contact {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2em;
+  position: relative;
+  min-height: 60vh;
+}
+.contact h3 {
+    color: var(--clr-accent);
+}
+.contact h2,
+.contact p,
+.contact li {
+    color: var(--clr-secondary);
+}
+.contact > * {
+  display: grid;
+  gap: 1em;
+  width: 50%;
+  place-content: center;
+  padding: 2em;
+  min-height: 450px;
+  background-color: var(--bg-form);
+}
+.contact__form {
+  border-radius: 0.5em 0 0 0.5em;
+}
+.contact__info {
+  border-radius: 0 0.5em 0.5em 0;
+  gap: 2em;
+}
+
+.contact__form .form {
+  display: grid;
+  gap: 1em;
+}
+.contact__form .form input {
+  border: none;
+  border-radius: 0.5em;
+  padding: .5em;
+  background-color: rgba(255, 255, 255, .2);
+  color: var(--clr-secondary);
+}
+.contact__form .form input::placeholder {
+    color: var(--clr-secondary);
+}
+.contact__form .form input[id='message'] {
+    height: 6em;
+}
+.contact__form .form button {
+    border: none;
+    border-radius: .5em;
+    background: var(--btn-accent);
+    color: var(--clr-secondary);
+    width: fit-content;
+    padding: .5em 2em;
+}
+.contact__form .form__inner {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: auto;
+  gap: 0.5em;
+}
+
+.info__social--links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}

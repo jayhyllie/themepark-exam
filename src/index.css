@@ -5,6 +5,7 @@
 
   --bg-primary: #dacba8;
   --bg-secondary: #2d2327;
+  --bg-form: #2c2c2c;
 
   --btn-primary: #6f391c;
   --btn-secondary: #130303;
@@ -174,6 +175,10 @@ main::before {
   background-blend-mode:lighten;
   height: 100%;
   width: 100%;
+}
+
+main:has(.contact) {
+  padding-block: 4em;
 }
 
 .wrapper {

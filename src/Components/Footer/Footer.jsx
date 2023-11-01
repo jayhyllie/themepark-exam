@@ -7,7 +7,9 @@ function Footer() {
     <footer className="footer">
       <ul className="footer__nav" role="list">
         {pages.map((page) => (
-          <motion.li key={page.id}>{page.title}</motion.li>
+          <motion.li key={page.id}>
+            <a href={page.path}>{page.title}</a>
+          </motion.li>
         ))}
       </ul>
       <ul className="footer__links" role="list">

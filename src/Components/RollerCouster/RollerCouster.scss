@@ -1,0 +1,86 @@
+$color: var(--btn-secondary);
+$cart-color: var(--btn-accent);
+$duration: 2.5s;
+$size: 10em;
+
+$line-width: 0.25em;
+
+$cart-count: 3;
+$cart-delay: 0.1s;
+$cart-size: 1em;
+$cart-square: false;
+
+@keyframes loop {
+  0% {
+    left: $cart-size / -2;
+  }
+  
+  15% {
+    left: $size / 2 - $cart-size / 2;
+    transform: rotate(0deg);
+  }
+  
+  85% {
+    left: $size / 2 - $cart-size / 2;
+    transform: rotate(-360deg);
+  }
+  
+  100% {
+    left: $size;
+    transform: rotate(-360deg);
+  }
+}
+
+.coaster {
+  position: relative;
+  height: $size;
+  margin: 0 auto;
+  overflow: hidden;
+  width: $size;
+  
+  &:before,
+  &:after {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  
+  &:before {
+    background-color: $cart-color;
+    height: $line-width;
+    bottom: 0;
+    width: $size;
+  }
+  
+  &:after {
+    border: $line-width solid $cart-color;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    height: $size;
+    margin-left: $size / -2;
+    width: $size;
+  }
+}
+
+.coaster__cart {
+  @if($cart-square == false) {
+    border-radius: 50%;
+  }
+  
+  animation: loop $duration linear infinite;
+  background-color: $color;
+  height: $cart-size;
+  left: $cart-size / -2;
+  position: absolute;
+  bottom: $line-width;
+  transform-origin: 50% (($size / 2 - $line-width - $cart-size) * -1);
+  width: $cart-size;
+}
+
+@for $i from 1 to $cart-count {
+  .coaster__cart:nth-child(#{$i}) {
+    animation-delay: $cart-delay * $i;
+  }
+}

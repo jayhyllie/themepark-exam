@@ -1,21 +1,29 @@
 main#splash {
+    min-height: 100vh;
     place-content: center;
 }
-main#splash h1 {
-    scale: 3;
+main#splash h1.splash__calc {
+    font-size: 5rem;
     letter-spacing: 5px;
+    position: relative;
+    text-align: center;
 }
-
+.loading {
+    height: 500px;
+    display: grid;
+    place-content: center;
+}
 .splash__wrapper {
     width: 100%;
 }
 .splash__logo {
-    max-width: 300px;
+    max-width: 600px;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
 }
 .splash__logo img {
-    width: 300px;
+    width: 600px;
     animation: reveal 3s linear 0s;
     max-height: 0;
     object-fit: contain;
@@ -28,7 +36,7 @@ main#splash h1 {
     }
     25%,
     75% {
-        max-height: 300px;
+        max-height: 600px;
     }
     100% {
         max-height: 0;
