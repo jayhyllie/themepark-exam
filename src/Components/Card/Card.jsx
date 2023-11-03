@@ -4,10 +4,9 @@ import "./Card.css";
 import { motion } from "framer-motion";
 
 function Card({ title_long, title, subTitle, buttonTitle, className, randomImage }) {
-
   return (
     <section className="card">
-      <a href="" className="card__title" disabled>
+      <a href="" className="card__title">
         {title_long}
       </a>
       <section className="card__inner">
@@ -32,12 +31,12 @@ function Card({ title_long, title, subTitle, buttonTitle, className, randomImage
             className="card__inner--content-body"
             variants={cardContent}
           >
-            <a href="" className="card__inner--content-body__link" disabled>
+            <a href="" className="card__inner--content-body__link">
               More info
             </a>
           </motion.div>
           <div className="card__inner--content-footer">
-            <a href="" className="card__inner--content-footer__link" disabled>
+            <a href="" className="card__inner--content-footer__link">
               <Button title={buttonTitle} className={className} />
             </a>
           </div>

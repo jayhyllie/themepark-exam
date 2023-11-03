@@ -1,9 +1,17 @@
+import { useState } from "react";
 import AnimatedPage from "../../Components/Animations/AnimatedPage";
 import RollerCouster from "../../Components/RollerCouster/RollerCouster";
 import { contactInfo, socialLinks } from "../../utils/props";
 import "./Contact.css";
+import Modal from "../../Components/Modal/Modal";
 
 const Contact = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleModal(e) {
+    e.preventDefault();
+    setIsOpen(true);
+  }
   return (
     <AnimatedPage>
       <RollerCouster />
@@ -21,7 +29,7 @@ const Contact = () => {
               <input type="text" placeholder="Phone" id="phone" />
             </section>
             <input type="text" placeholder="Message" id="message" />
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleModal} className="form__button">Submit</button>
           </form>
         </section>
         <section className="contact__info">
@@ -48,6 +56,7 @@ const Contact = () => {
           </section>
         </section>
       </section>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </AnimatedPage>
   );
 };
